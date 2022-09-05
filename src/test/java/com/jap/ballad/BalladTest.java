@@ -15,24 +15,26 @@ import static org.junit.Assert.assertEquals;
 
 public class BalladTest {
     Ballad ballad = null;
+
     @Before
-    public void setUp(){
+    public void setUp() {
         ballad = new Ballad();
     }
+
     @After
-    public void tearDown(){
+    public void tearDown() {
         ballad = null;
     }
 
     @Test
     public void givenCorrectDataFromFileCheckData() throws FileNotFoundException {
         String balladData = "";
-        String str = ballad.readPoemFromAFile("src/main/resources/ballad.txt");
+        String str = ballad.readInputFromAFile("src/main/resources/ballad.txt");
         FileInputStream fis = new FileInputStream("src/main/resources/ballad.txt");
         Scanner scanner = new Scanner(fis);
         while (scanner.hasNextLine()) {
-            balladData = balladData.concat("\n"+scanner.nextLine());
+            balladData = balladData.concat("\n" + scanner.nextLine());
         }
-        assertEquals("Data from file does not match",str.trim(),balladData.trim());
+        assertEquals("Data from file does not match", str.trim(), balladData.trim());
     }
-    }
+}
