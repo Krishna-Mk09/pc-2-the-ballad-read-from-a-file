@@ -7,8 +7,7 @@ import java.io.IOException;
 public class Ballad {
     public String readPoemFromAFile(String fileName){
        // Write the logic to read from a file
+
         return "";
     }
-
-
 }
