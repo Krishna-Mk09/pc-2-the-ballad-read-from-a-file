@@ -1,12 +1,12 @@
 package com.jap.ballad;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
 /**
  * It reads the content of a file and returns the content of the file
+ * It handles the exception if any and return output
  */
 public class Ballad {
     // Reading the file and returning the content of the file.
@@ -19,10 +19,8 @@ public class Ballad {
                 lineCount++;
                 output = output.concat(line + "\n");
             }
-        } catch (FileNotFoundException ex) {
-            throw new RuntimeException(ex);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        } catch (IOException exception) {
+            throw new RuntimeException(exception);
         }
         return output;
     }
